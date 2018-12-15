@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="requestForm" (ngSubmit)="registerRequest()">
+    <mat-form-field class="example-full-width">
+      <input type="text" class="input" placeholder="Title" [formControl]="requestForm.controls['title']" required
+        matInput autofocus>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter" [formControl]="requestForm.controls['date']"
+        placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Category" [formControl]="requestForm.controls['category']">
+        <mat-option *ngFor="let cat of categories" [value]="cat">
+          {{cat}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Sub Category" [formControl]="requestForm.controls['sub_category']">
+        <mat-option *ngFor="let scat of sub_categories" [value]="scat">
+          {{scat}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <span matPrefix> ₹ &nbsp;</span>
+      <input [formControl]="requestForm.controls['budget']" type="number" matInput placeholder="Budget">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Priority" [formControl]="requestForm.controls['priority']">
+        <mat-option *ngFor="let prio of priority" [value]="prio">
+          {{prio}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description" [formControl]="requestForm.controls['description']"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!requestForm.valid">Add Request</button>
+    <button mat-raised-button color="primary" type="button" (click)="cancel()">Cancel</button>
+  </form>
+</ion-content>

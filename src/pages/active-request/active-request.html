@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <mat-card class="example-card" (click)="exploreRequest({id:123})">
+    <mat-card-title> Pest Control </mat-card-title>
+    <mat-card-subtitle> It is needed to fix as soon as possible. </mat-card-subtitle>
+  </mat-card>
+
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="addRequest()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <!-- <button mat-mini-fab color="primary" (click)="addRequest()">+</button> -->
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Request Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <mat-card class="example-card">
+    <mat-list>
+
+      <mat-list-item>
+        <h4 mat-line>Title</h4>
+        <p mat-line> Pest Control </p>
+      </mat-list-item>
+
+      <mat-list-item>
+        <h4 mat-line>Desciption</h4>
+        <p mat-line> It is needed to fix as soon as possible. </p>
+      </mat-list-item>
+
+      <mat-list-item>
+        <h4 mat-line>Date</h4>
+        <p mat-line> June 12, 2018 </p>
+      </mat-list-item>
+
+      <mat-list-item>
+        <h4 mat-line>Priority</h4>
+        <p mat-line> High </p>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <h3 mat-subheader>Bidders</h3>
+
+      <mat-list-item (click)="exploreBidderProfile({id:1123})">
+        <h4 mat-line>Alpesh Vasani</h4>
+        <p mat-line>Rs. 1000</p>
+        <p mat-line>20 Days</p>
+      </mat-list-item>
+
+      <mat-list-item (click)="exploreBidderProfile({id:1123})">
+        <h4 mat-line>Aadesh Kolhe</h4>
+        <p mat-line>Rs. 1250</p>
+        <p mat-line>15 Days</p>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-card>
+
+</ion-content>

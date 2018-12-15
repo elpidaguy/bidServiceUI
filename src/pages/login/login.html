@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field class="example-full-width">
+            <input type="text" class="input" placeholder="Username" [formControl]="loginForm.controls['username']"
+                required matInput autofocus>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input type="password" class="input" placeholder="Password" [formControl]="loginForm.controls['password']"
+                required matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-select placeholder="Type" [formControl]="loginForm.controls['userType']">
+                <mat-option [value]="'Select 1'">
+                    Select 1
+                </mat-option>
+                <mat-option [value]="'Select 2'">
+                    Select 2
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+</ion-content>
